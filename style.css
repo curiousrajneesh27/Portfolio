@@ -516,79 +516,193 @@ body{
 
  /*------------------- Responsive Design on small screen -------------------*/
 
-/* Medium layout */
-@media only screen and (min-width:1000px) and (max-width:1200px){
-  .container{
-    width: 970px;
+/* Large layout */
+@media only screen and (min-width: 1201px) {
+  .container {
+    width: 1170px;
+    padding: 0 15px;
   }
 }
 
-@media(max-width:1050px){
-  .FirstElement{ 
+/* Medium layout */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    width: 960px;
+    padding: 0 15px;
+  }
+}
+
+/* Tablet layout */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 720px;
+    padding: 0 15px;
+  }
+  
+  .FirstElement {
     flex-direction: column;
     padding-top: 2rem;
+    text-align: center;
   }
-  .profile-text{
-    padding: 40px 0px;
+  
+  .profile-text {
+    padding: 40px 0;
+    align-items: center;
+  }
+  
+  .about {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-content, .about-skills {
+    flex-basis: 100%;
+  }
+  
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
-
-/* tablet layout */
-@media only screen and (min-width:768px) and (max-width:999px){
-  .container{
-    width: 750px;
-  } 
-}  
-
-
 /* Mobile Layout */
-@media only screen and (max-width:767px){
-  .container{
-    width: 350px;
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
   }
 
+  /* Header Mobile Styles */
   .header .menu_icon {
     display: block;
   }
-  .header ul{
+  
+  .header ul {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #202020;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 999;
   }
-  .header i{
-    color: #e5e5e5;
+  
+  .header ul.show {
+    display: block;
+  }
+  
+  .header ul li {
+    margin: 15px 0;
+    display: block;
+  }
+  
+  .logo .signature {
+    width: 80px;
   }
 
-  .profile-text{
-    width: 350px;
-  }
-  .FirstElement .profile-text p{
-    text-align: justify;
-  }
-  .about{
+  /* Home Section Mobile Styles */
+  .FirstElement {
     flex-direction: column;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  
+  .profile-photo {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  
+  .profile-text {
+    padding: 40px 0;
+    align-items: center;
+  }
+  
+  .profile-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .btn-group .btn {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    width: 200px;
+  }
+
+  /* About Section Mobile Styles */
+  .about {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-content, .about-skills {
     flex-basis: 100%;
-    margin-bottom: 30px;
   }
-  .about-skills{
-    width: 100%;
-    margin-top: 30px;
+  
+  .about-content h4 {
+    font-size: 32px;
+    line-height: 1.3;
+    text-align: center;
   }
+
+  /* Education Section Mobile Styles */
   .education-content .row {
     flex-direction: column;
     height: auto;
     margin-bottom: 50px;
   }
-
+  
   .education-content .row .education,
   .education-content .row .internship {
     flex-basis: 100%;
     max-width: 100%;
     margin-top: 30px;
   }
-  .project{
-    flex-basis: 100%;
-    margin-bottom: 30px;
+
+  /* Projects Section Mobile Styles */
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project {
+    margin-bottom: 0;
+    padding: 20px;
+  }
+  
+  .project h4 {
+    font-size: 20px;
   }
 
-} 
+  /* Contact Section Mobile Styles */
+  .contact-content .contact-title h4 {
+    font-size: 32px;
+  }
+  
+  .contact input,
+  .contact textarea {
+    padding: 12px;
+  }
+  
+  .contact .submit {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Small Mobile Layout */
+@media only screen and (max-width: 480px) {
+  .profile-photo {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .profile-text h1 {
+    font-size: 2rem;
+  }
+  
+  .about-content h4,
+  .contact-content .contact-title h4 {
+    font-size: 28px;
+  }
+}

@@ -1,15 +1,31 @@
 $(document).ready(function() {
+    // Mobile menu toggle
+    $(".menu_icon").click(function() {
+        $(".header ul").toggleClass("show");
+    });
+
+    // Close mobile menu when clicking outside
+    $(document).click(function(e) {
+        if (!$(e.target).closest('.header').length) {
+            $(".header ul").removeClass("show");
+        }
+    });
+
+    // Close mobile menu when clicking a link
+    $(".header ul li a").click(function() {
+        $(".header ul").removeClass("show");
+    });
 
     //sticky header
     $(window).scroll(function() {
-      if ($(this).scrollTop() > 1) {
-        $(".header-area").addClass("sticky");
-      } else {
-        $(".header-area").removeClass("sticky");
-      }
+        if ($(this).scrollTop() > 1) {
+            $(".header-area").addClass("sticky");
+        } else {
+            $(".header-area").removeClass("sticky");
+        }
   
-      // Update the active section in the header
-      updateActiveSection();
+        // Update the active section in the header
+        updateActiveSection();
     });
   
     $(".header ul li a").click(function(e) {
